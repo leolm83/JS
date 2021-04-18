@@ -1,0 +1,55 @@
+
+
+<script>
+    let ultimoIndice=""
+    let indiceAlfabeto=""
+    function parabens(){
+        document.querySelector('#parabens').style.display="block"
+        document.querySelector('#parabens').innerHTML=" Correto !!!"
+        setTimeout(limpaParabens, 500)
+    }
+    function limpaParabens(){
+        document.querySelector('#parabens').style.display="none"
+    }
+    function limpaEntrada(){
+        document.querySelector('input').value="";
+    }
+    function verificaLetra(){
+            letraDigitada=document.querySelector('input').value;
+            if(letraDigitada.length>3){
+                limpaEntrada()
+            }
+            letraGerada=document.querySelector('#letra').textContent;
+            if(letraDigitada.toLowerCase()==letraGerada){
+                setTimeout(limpaEntrada,500)
+                parabens();
+                geraLetra();
+            } 
+    };   
+    function geraLetra(){
+        let alfabeto=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+        while(indiceAlfabeto==ultimoIndice){
+            indiceAlfabeto=Math.floor(Math.random() * (25 - 0)) + 0; 
+        }
+        document.querySelector("#letra").innerHTML=alfabeto[indiceAlfabeto];
+        ultimoIndice=indiceAlfabeto;
+
+    };
+</script>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body  onload="geraLetra()">
+    <h1 id="title">Letrinhas</h1>
+    <div id="main">
+        <h1 id="letra" ></h1>
+        <h3 id="parabens"></h3>
+    </div>
+    <div id="divInput">
+    <input id="input" onInput="verificaLetra()"type="text"></input>
+    </div>
+    <div id="foooter">
+    <button id="button"onclick="verificaLetra()">Confirm</button>
+    
+    </div>
+</body>

@@ -1,0 +1,66 @@
+*{
+    padding:0;
+    margin:0;
+
+}
+body{
+    background-color: #8EC8E1;
+    text-align: center;
+    height: 100vh;
+    display:grid;
+    grid-template-areas: "title" 
+                        "main"
+                        "input"
+                        "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 15%  35% 10% 1fr;
+}
+#title{
+    grid-area: "title";
+    font-size:5em;
+
+    color:F6F5AE;
+    background-color: #2E86AB;
+}
+#main{
+    
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    grid-area:"main";
+    
+    padding:0;
+    margin:0;
+}
+#letra{
+    font-size:6em;
+    border: black 6px solid;
+    border-radius:10px;
+    width:20%;
+    height:60%;
+    color:F6F5AE;
+    background-color: #2E86AB;
+/*Buga em resolucoes menores, creio que se usar display grid com 1fr 1fr 1r resolva meu problema*/
+}
+#divInput{
+    grid-area: "input";
+    
+}
+#footer{
+    grid-area: "footer";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#button{
+    width:20%;
+    height:20%;
+    background-color:goldenrod;
+}
+#parabens{
+    display:none;
+    border: black 6px solid;
+    border-radius:10px;
+    background-color:goldenrod;
+}
